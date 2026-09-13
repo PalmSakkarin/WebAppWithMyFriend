@@ -1,0 +1,42 @@
+.dashboard-card {
+  background: #1f2937;
+  border-radius: 15px;
+  padding: 25px;
+  color: white;
+  border: 1px solid #374151;
+  transition: .3s;
+}
+
+  .dashboard-card:hover {
+    transform: translateY(-5px);
+    border-color: white;
+  }
+
+  .dashboard-card small {
+    color: #9ca3af;
+  }
+
+  .dashboard-card h2 {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+.success {
+  color: #22c55e;
+}
+
+.warning {
+  color: #f59e0b;
+}
+
+.panel {
+  background: #1f2937;
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid #374151;
+  color: white;
+}
+
+.table {
+  margin-bottom: 0;
+}
