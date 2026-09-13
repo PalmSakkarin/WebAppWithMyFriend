@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-pluem-page',
@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './pluem-page.css',
 })
 export class PluemPage {
-
+    title = input<string>()
+    id = input<number>()
+    name = input<string>()
+    description = input<string>()
 }

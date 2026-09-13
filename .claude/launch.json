@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "start",
+        "--prefix",
+        "C:/Users/Premp/source/repos/WebAppWithMyFriend/Frontend",
+        "--",
+        "--port=62199"
+      ],
+      "port": 62199,
+      "url": "http://127.0.0.1:62199"
+    }
+  ]
+}
