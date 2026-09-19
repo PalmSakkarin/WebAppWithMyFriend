@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './app.css'
 })
 export class App {
-<<<<<<< HEAD
-=======
   protected readonly title = signal('Frontend');
   isOpen = false;
->>>>>>> 5af19b3f1c903903f65bd40504a9b6ca66fae7f6
 }
