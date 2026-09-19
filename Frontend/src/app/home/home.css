@@ -40,3 +40,348 @@
 .table {
   margin-bottom: 0;
 }
+
+.home-container {
+  min-height: 100vh;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #fce7f3 0%, #e0e7ff 50%, #dbeafe 100%);
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 80px;
+  animation: fadeInDown 0.8s ease;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #6b5b95;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 10px rgba(107, 91, 149, 0.1);
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: #9b8bb5;
+  margin: 0;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card-wrapper {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: slideInUp 0.6s ease backwards;
+}
+
+.card-wrapper:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.card-wrapper:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.card-wrapper:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.card-wrapper:hover {
+  transform: translateY(-10px);
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+  box-shadow: 0 10px 30px rgba(107, 91, 149, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+  z-index: 1;
+}
+
+.card:hover::before {
+  left: 100%;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #a78bfa 0%, #f472b6 50%, #7dd3fc 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: 2;
+}
+
+.card:hover::after {
+  transform: scaleX(1);
+}
+
+/* Primary Card - Blue Pastel */
+.card-primary {
+  border: 2px solid #bfdbfe;
+  position: relative;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+.card-primary:hover {
+  background: linear-gradient(135deg, #e0f2fe 0%, #cffafe 100%);
+  border-color: #93c5fd;
+  box-shadow: 0 20px 50px rgba(147, 197, 253, 0.25);
+}
+
+.card-primary .card-icon {
+  color: #0ea5e9;
+}
+
+.card-primary .card-title {
+  color: #0369a1;
+}
+
+.card-primary .card-description {
+  color: #0c4a6e;
+}
+
+.card-primary .card-link {
+  color: #0ea5e9;
+}
+
+/* Secondary Card - Purple Pastel */
+.card-secondary {
+  border: 2px solid #ddd6fe;
+  position: relative;
+  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+}
+
+.card-secondary:hover {
+  background: linear-gradient(135deg, #f3e8ff 0%, #ede9fe 100%);
+  border-color: #c4b5fd;
+  box-shadow: 0 20px 50px rgba(196, 181, 253, 0.25);
+}
+
+.card-secondary .card-icon {
+  color: #a855f7;
+}
+
+.card-secondary .card-title {
+  color: #6d28d9;
+}
+
+.card-secondary .card-description {
+  color: #5b21b6;
+}
+
+.card-secondary .card-link {
+  color: #a855f7;
+}
+
+/* Accent Card - Pink Pastel */
+.card-accent {
+  border: 2px solid #fbcfe8;
+  position: relative;
+  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+}
+
+.card-accent:hover {
+  background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+  border-color: #f472b6;
+  box-shadow: 0 20px 50px rgba(244, 114, 182, 0.25);
+}
+
+.card-accent .card-icon {
+  color: #ec4899;
+}
+
+.card-accent .card-title {
+  color: #be185d;
+}
+
+.card-accent .card-description {
+  color: #831843;
+}
+
+.card-accent .card-link {
+  color: #ec4899;
+}
+
+.card-icon {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.card:hover .card-icon {
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 8px 16px rgba(107, 91, 149, 0.15));
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 20px 0;
+  transition: color 0.3s ease;
+}
+
+.card-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 30px 0;
+  flex-grow: 1;
+  transition: color 0.3s ease;
+}
+
+.card-footer {
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.card:hover .card-footer {
+  border-color: inherit;
+}
+
+.card-link {
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-link {
+  transform: translateX(5px);
+}
+
+/* Dark Mode Card Variants */
+@media (prefers-color-scheme: dark) {
+  .home-container {
+    background: linear-gradient(135deg, #2d1b4e 0%, #1e3a8a 50%, #0c2d48 100%);
+  }
+
+  .hero-title {
+    color: #e9d5ff;
+  }
+
+  .hero-subtitle {
+    color: #d8b4fe;
+  }
+
+  .card {
+    background: #1f2937;
+    color: white;
+    border-color: #374151;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .card:hover {
+    background: #293548;
+  }
+
+  .card-primary .card-title,
+  .card-secondary .card-title,
+  .card-accent .card-title {
+    color: white;
+  }
+
+  .card-description {
+    color: #d1d5db;
+  }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-wrapper {
+  animation: slideInUp 0.6s ease backwards;
+}
+
+.card-wrapper:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.card-wrapper:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.card-wrapper:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 40px 15px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .cards-grid {
+    gap: 25px;
+  }
+
+  .card {
+    padding: 30px 20px;
+  }
+
+  .card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+}

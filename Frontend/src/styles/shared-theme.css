@@ -1,0 +1,716 @@
+/* ====================================
+   SHARED PASTEL THEME - Central Styles
+   ====================================
+   ใช้ได้กับทุก component และ page
+   ไม่ต้องสร้าง CSS ซ้ำ แค่ import file นี้
+   ==================================== */
+
+/* ============================================
+   1. COLOR PALETTE - สีที่ใช้ทั่วแอป
+   ============================================ */
+:root {
+  /* Background Gradients */
+  --bg-gradient-primary: linear-gradient(135deg, #fce7f3 0%, #e0e7ff 50%, #dbeafe 100%);
+  --bg-gradient-light: linear-gradient(135deg, #faf5ff 0%, #f0f9ff 100%);
+  
+  /* Card Colors */
+  --card-bg-white: white;
+  --card-shadow-light: 0 5px 15px rgba(107, 91, 149, 0.1);
+  --card-shadow-hover: 0 15px 35px rgba(107, 91, 149, 0.15);
+  
+  /* Primary Colors */
+  --blue-pastel-light: #f0f9ff;
+  --blue-pastel-medium: #e0f2fe;
+  --blue-pastel-dark: #0369a1;
+  --blue-pastel-accent: #0ea5e9;
+  --blue-pastel-border: #bfdbfe;
+  
+  /* Secondary Colors */
+  --purple-pastel-light: #faf5ff;
+  --purple-pastel-medium: #f3e8ff;
+  --purple-pastel-dark: #6d28d9;
+  --purple-pastel-accent: #a855f7;
+  --purple-pastel-border: #ddd6fe;
+  
+  /* Accent Colors */
+  --pink-pastel-light: #fdf2f8;
+  --pink-pastel-medium: #fce7f3;
+  --pink-pastel-dark: #be185d;
+  --pink-pastel-accent: #ec4899;
+  --pink-pastel-border: #fbcfe8;
+  
+  /* Text Colors */
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-light: #94a3b8;
+  --text-white: white;
+  
+  /* Neutral Colors */
+  --neutral-light: #f3f4f6;
+  --neutral-border: #e5e7eb;
+  --neutral-dark: #374151;
+}
+
+/* ============================================
+   2. GLOBAL STYLES
+   ============================================ */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--bg-gradient-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: var(--text-primary);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ============================================
+   3. CONTAINER STYLES
+   ============================================ */
+.page-container,
+.page-wrapper,
+.container-fluid,
+.container {
+  background: transparent;
+}
+
+/* Main Layout */
+.main-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-gradient-primary);
+}
+
+.page-content {
+  flex: 1;
+  padding: 25px;
+  background: var(--bg-gradient-primary);
+  min-height: 100vh;
+}
+
+/* ============================================
+   4. PAGE SECTION STYLES
+   ============================================ */
+.page-section {
+  background: var(--card-bg-white);
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 30px;
+  box-shadow: var(--card-shadow-light);
+  border: 2px solid var(--neutral-border);
+  transition: all 0.3s ease;
+  animation: slideInUp 0.6s ease;
+}
+
+.page-section:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.page-section.blue-theme {
+  border-color: var(--blue-pastel-border);
+}
+
+.page-section.blue-theme:hover {
+  border-color: var(--blue-pastel-accent);
+  box-shadow: 0 20px 50px rgba(14, 165, 233, 0.2);
+}
+
+.page-section.purple-theme {
+  border-color: var(--purple-pastel-border);
+}
+
+.page-section.purple-theme:hover {
+  border-color: var(--purple-pastel-accent);
+  box-shadow: 0 20px 50px rgba(168, 85, 247, 0.2);
+}
+
+.page-section.pink-theme {
+  border-color: var(--pink-pastel-border);
+}
+
+.page-section.pink-theme:hover {
+  border-color: var(--pink-pastel-accent);
+  box-shadow: 0 20px 50px rgba(236, 72, 153, 0.2);
+}
+
+/* ============================================
+   5. TYPOGRAPHY
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  text-shadow: 0 2px 10px rgba(107, 91, 149, 0.1);
+}
+
+.page-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  border-bottom: 3px solid var(--neutral-border);
+  padding-bottom: 15px;
+}
+
+.section-title.blue {
+  color: var(--blue-pastel-dark);
+  border-color: var(--blue-pastel-accent);
+}
+
+.section-title.purple {
+  color: var(--purple-pastel-dark);
+  border-color: var(--purple-pastel-accent);
+}
+
+.section-title.pink {
+  color: var(--pink-pastel-dark);
+  border-color: var(--pink-pastel-accent);
+}
+
+p {
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   6. CARD STYLES
+   ============================================ */
+.card {
+  background: var(--card-bg-white);
+  border: 1px solid var(--neutral-border);
+  border-radius: 15px;
+  box-shadow: var(--card-shadow-light);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.card.card-blue {
+  background: var(--blue-pastel-light);
+  border: 2px solid var(--blue-pastel-border);
+}
+
+.card.card-blue:hover {
+  background: var(--blue-pastel-medium);
+  border-color: var(--blue-pastel-accent);
+}
+
+.card.card-purple {
+  background: var(--purple-pastel-light);
+  border: 2px solid var(--purple-pastel-border);
+}
+
+.card.card-purple:hover {
+  background: var(--purple-pastel-medium);
+  border-color: var(--purple-pastel-accent);
+}
+
+.card.card-pink {
+  background: var(--pink-pastel-light);
+  border: 2px solid var(--pink-pastel-border);
+}
+
+.card.card-pink:hover {
+  background: var(--pink-pastel-medium);
+  border-color: var(--pink-pastel-accent);
+}
+
+/* Feature Grid */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.feature-card {
+  padding: 25px;
+  border-radius: 15px;
+  border: 2px solid var(--neutral-border);
+  transition: all 0.3s ease;
+}
+
+.feature-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.feature-card p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.feature-card.feature-blue {
+  background: var(--blue-pastel-light);
+  border-color: var(--blue-pastel-border);
+}
+
+.feature-card.feature-blue:hover {
+  background: var(--blue-pastel-medium);
+  border-color: var(--blue-pastel-accent);
+  transform: scale(1.05);
+}
+
+.feature-card.feature-blue h3 {
+  color: var(--blue-pastel-dark);
+}
+
+.feature-card.feature-blue p {
+  color: var(--blue-pastel-dark);
+}
+
+.feature-card.feature-purple {
+  background: var(--purple-pastel-light);
+  border-color: var(--purple-pastel-border);
+}
+
+.feature-card.feature-purple:hover {
+  background: var(--purple-pastel-medium);
+  border-color: var(--purple-pastel-accent);
+  transform: scale(1.05);
+}
+
+.feature-card.feature-purple h3 {
+  color: var(--purple-pastel-dark);
+}
+
+.feature-card.feature-purple p {
+  color: var(--purple-pastel-dark);
+}
+
+.feature-card.feature-pink {
+  background: var(--pink-pastel-light);
+  border-color: var(--pink-pastel-border);
+}
+
+.feature-card.feature-pink:hover {
+  background: var(--pink-pastel-medium);
+  border-color: var(--pink-pastel-accent);
+  transform: scale(1.05);
+}
+
+.feature-card.feature-pink h3 {
+  color: var(--pink-pastel-dark);
+}
+
+.feature-card.feature-pink p {
+  color: var(--pink-pastel-dark);
+}
+
+/* ============================================
+   7. BUTTON STYLES
+   ============================================ */
+.btn {
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #93c5fd 0%, #a78bfa 100%);
+  color: var(--text-white);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #60a5fa 0%, #8b5cf6 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(147, 197, 253, 0.3);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #f472b6 0%, #a78bfa 100%);
+  color: var(--text-white);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(244, 114, 182, 0.3);
+}
+
+.btn-outline-blue {
+  background: transparent;
+  color: var(--blue-pastel-accent);
+  border: 2px solid var(--blue-pastel-accent);
+}
+
+.btn-outline-blue:hover {
+  background: var(--blue-pastel-light);
+  border-color: var(--blue-pastel-dark);
+  color: var(--blue-pastel-dark);
+}
+
+.btn-outline-purple {
+  background: transparent;
+  color: var(--purple-pastel-accent);
+  border: 2px solid var(--purple-pastel-accent);
+}
+
+.btn-outline-purple:hover {
+  background: var(--purple-pastel-light);
+  border-color: var(--purple-pastel-dark);
+  color: var(--purple-pastel-dark);
+}
+
+/* ============================================
+   8. TABLE STYLES
+   ============================================ */
+.table {
+  background: var(--card-bg-white);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow-light);
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table thead {
+  background: var(--bg-gradient-light);
+  border-bottom: 2px solid var(--neutral-border);
+}
+
+.table thead th {
+  color: var(--purple-pastel-dark);
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+}
+
+.table tbody td {
+  padding: 1rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--neutral-light);
+}
+
+.table tbody tr:hover {
+  background: var(--bg-gradient-light);
+}
+
+/* ============================================
+   9. FORM STYLES
+   ============================================ */
+.form-control,
+.form-select {
+  border: 2px solid var(--neutral-border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+  background: var(--card-bg-white);
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--purple-pastel-accent);
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.1);
+  outline: none;
+}
+
+.form-control::placeholder {
+  color: var(--text-light);
+}
+
+.form-label {
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================
+   10. BADGE STYLES
+   ============================================ */
+.badge {
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: inline-block;
+}
+
+.badge-success {
+  background: linear-gradient(135deg, #a7f3d0 0%, #6ee7b7 100%);
+  color: #065f46;
+}
+
+.badge-warning {
+  background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%);
+  color: #92400e;
+}
+
+.badge-danger {
+  background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%);
+  color: #7f1d1d;
+}
+
+.badge-info {
+  background: linear-gradient(135deg, #bae6fd 0%, #7dd3fc 100%);
+  color: #0c2d48;
+}
+
+.badge-blue {
+  background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 100%);
+  color: var(--blue-pastel-dark);
+}
+
+.badge-purple {
+  background: linear-gradient(135deg, #ddd6fe 0%, #c4b5fd 100%);
+  color: var(--purple-pastel-dark);
+}
+
+.badge-pink {
+  background: linear-gradient(135deg, #fbcfe8 0%, #f472b6 100%);
+  color: var(--pink-pastel-dark);
+}
+
+/* ============================================
+   11. LINK STYLES
+   ============================================ */
+a {
+  color: var(--purple-pastel-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--purple-pastel-dark);
+  text-decoration: underline;
+}
+
+/* ============================================
+   12. SCROLLBAR STYLING
+   ============================================ */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(226, 232, 240, 0.5);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #c4b5fd, #f472b6);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #a855f7, #ec4899);
+}
+
+/* ============================================
+   13. ANIMATIONS
+   ============================================ */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in-down {
+  animation: fadeInDown 0.8s ease;
+}
+
+.slide-in-up {
+  animation: slideInUp 0.6s ease;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s ease;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease;
+}
+
+/* ============================================
+   14. UTILITY CLASSES
+   ============================================ */
+.text-primary {
+  color: var(--text-primary) !important;
+}
+
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.text-light {
+  color: var(--text-light) !important;
+}
+
+.text-white {
+  color: var(--text-white) !important;
+}
+
+.text-blue {
+  color: var(--blue-pastel-dark) !important;
+}
+
+.text-purple {
+  color: var(--purple-pastel-dark) !important;
+}
+
+.text-pink {
+  color: var(--pink-pastel-dark) !important;
+}
+
+.bg-white {
+  background: var(--card-bg-white) !important;
+}
+
+.bg-light-blue {
+  background: var(--blue-pastel-light) !important;
+}
+
+.bg-light-purple {
+  background: var(--purple-pastel-light) !important;
+}
+
+.bg-light-pink {
+  background: var(--pink-pastel-light) !important;
+}
+
+.shadow-light {
+  box-shadow: var(--card-shadow-light) !important;
+}
+
+.shadow-hover {
+  box-shadow: var(--card-shadow-hover) !important;
+}
+
+.rounded-lg {
+  border-radius: 15px !important;
+}
+
+.rounded-xl {
+  border-radius: 20px !important;
+}
+
+/* ============================================
+   15. RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 768px) {
+  .page-container,
+  .page-content {
+    padding: 15px;
+  }
+
+  .page-section {
+    padding: 20px;
+  }
+
+  .page-title {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  body {
+    font-size: 0.95rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #e2e8f0;
+    --text-secondary: #cbd5e1;
+    --text-light: #94a3b8;
+    --neutral-light: #334155;
+    --neutral-border: #475569;
+  }
+
+  html,
+  body {
+    background: linear-gradient(135deg, #2d1b4e 0%, #1e3a8a 50%, #0c2d48 100%);
+  }
+
+  .page-section,
+  .card,
+  .table {
+    background: #1f2937;
+    border-color: #374151;
+  }
+}

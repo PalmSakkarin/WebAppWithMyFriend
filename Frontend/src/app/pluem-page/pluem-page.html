@@ -1,3 +1,31 @@
-<p>รหัส {{id()}}</p>
-<p>ชื่อ {{name()}}</p>
-<p>รายละเอียด {{description()}}</p>
+<div class="page-container">
+  <div class="fade-in-down">
+    <h1 class="page-title text-new-color">🌸 Pluem Page</h1>
+    <p class="page-subtitle">Welcome to Pluem Page</p>
+  </div>
+
+  <div class="page-section purple-theme slide-in-up">
+    <h2 class="section-title purple">Information</h2>
+    <p *ngIf="id()">รหัส: <strong>{{ id() }}</strong></p>
+    <p *ngIf="name()">ชื่อ: <strong>{{ name() }}</strong></p>
+    <p *ngIf="description()">รายละเอียด: <strong>{{ description() }}</strong></p>
+  </div>
+
+  <div class="page-section purple-theme slide-in-up">
+    <h2 class="section-title purple">Features</h2>
+    <div class="feature-grid">
+      <div class="feature-card feature-purple">
+        <h3>Feature 1</h3>
+        <p>Description for feature 1</p>
+      </div>
+      <div class="feature-card feature-purple">
+        <h3>Feature 2</h3>
+        <p>Description for feature 2</p>
+      </div>
+      <div class="feature-card feature-purple">
+        <h3>Feature 3</h3>
+        <p>Description for feature 3</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,20 +1,46 @@
-<div class="container-fluid">
+<div class="container-fluid home-container">
 
-  <h1 class="mb-4 text-white fw-bold">
-    Welcome to Home 👋
-  </h1>
+  <div class="hero-section">
+    <h1 class="hero-title">Welcome to Home 👋</h1>
+    <p class="hero-subtitle">Select a page to explore</p>
+  </div>
 
-  <div class="row g-4">
+  <div class="cards-grid">
+    
+    <!-- Palm Page Card -->
+    <div class="card-wrapper" (click)="navigateToPalmPage()">
+      <div class="card card-primary">
+ <div class="card-icon">🌴</div>
+ <h3 class="card-title">Palm Page</h3>
+ <p class="card-description">Explore the Palm Page features and content</p>
+        <div class="card-footer">
+          <span class="card-link">Click to visit →</span>
+        </div>
+      </div>
+    </div>
 
-    <div class="col-lg-4">
+    <!-- Pluem Page Card -->
+    <div class="card-wrapper" (click)="navigateToPluemPage()">
+      <div class="card card-secondary">
+        <div class="card-icon">🌸</div>
+        <h3 class="card-title">Pluem Page</h3>
+        <p class="card-description">Discover the Pluem Page experiences</p>
+ <div class="card-footer">
+          <span class="card-link">Click to visit →</span>
+ </div>
+      </div>
+    </div>
 
-      <!--<a routerLink="/dashboard"
-         class="btn btn-primary btn-lg w-100">
-
-        Go to Dashboard
-
-      </a>-->
-
+    <!-- Dashboard Card -->
+    <div class="card-wrapper" (click)="navigateToDashboard()">
+      <div class="card card-accent">
+ <div class="card-icon">📊</div>
+ <h3 class="card-title">Dashboard</h3>
+ <p class="card-description">View analytics and statistics</p>
+        <div class="card-footer">
+   <span class="card-link">Click to visit →</span>
+        </div>
+      </div>
     </div>
 
   </div>
